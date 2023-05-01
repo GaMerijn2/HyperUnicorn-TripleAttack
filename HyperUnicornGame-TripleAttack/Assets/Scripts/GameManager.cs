@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 {
     // Other Variable's
 
+
+
     // UI Variable's
     public GameObject Pause_Screen;
     public Button resume_Game;
