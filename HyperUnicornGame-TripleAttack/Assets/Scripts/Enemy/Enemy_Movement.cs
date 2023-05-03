@@ -34,5 +34,6 @@ public class Enemy_Movement : MonoBehaviour
     void SetEnemyPosition()
     {
         myEnemy.SetDestination(new Vector3(target.x, target.y, transform.position.z));
+        myEnemy.updateRotation = true;
     }
 }

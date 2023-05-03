@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public Camera cam;
     public Transform my;
 
-    private float movementSpeed = 10;
+    [SerializeField] private float movementSpeed = 5;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -37,6 +37,6 @@ public class PlayerMovement : MonoBehaviour
         float angle = (180 / Mathf.PI) * direction + addAngle;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
-        
     }
+        
 }
