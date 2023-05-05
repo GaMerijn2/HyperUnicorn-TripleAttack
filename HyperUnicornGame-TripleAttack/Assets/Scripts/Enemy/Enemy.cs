@@ -8,6 +8,14 @@ public class Enemy : MonoBehaviour
     public int speed;
     public int damage;
 
+    public void GetHit()
+    {
+        health -= 1;
+        if(health == 0)
+        {
+            Destroy(gameObject);
+        }
+    }
     void HuntingPlayer()
     {
 

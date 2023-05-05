@@ -26,8 +26,12 @@ public class CheckArea : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        my_Movement.CheckPlayer = false;
-        Debug.Log("Went out of range");
+        if (collision.CompareTag(detectionTag))
+        {
+            my_Movement.CheckPlayer = false;
+            Debug.Log("Went out of range");
+        }
+        
     }
 
     // Start is called before the first frame update
