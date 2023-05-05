@@ -1280,8 +1280,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 500
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -2420,6 +2420,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1487280140}
   m_CullTransparentMesh: 1
+--- !u!1 &1537166130 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5404032129150407011, guid: 2f45d2c29d876e946b23a3ee8a59baf5, type: 3}
+  m_PrefabInstance: {fileID: 5404032128041717828}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1537166135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537166130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dda1cf0632e0e994783a1adb5a7ea5d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneCamera: {fileID: 519420031}
+  movement_speed: 10
 --- !u!1 &1688644307
 GameObject:
   m_ObjectHideFlags: 0
@@ -2895,10 +2914,22 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5404032129150407016, guid: 2f45d2c29d876e946b23a3ee8a59baf5, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5404032129150407016, guid: 2f45d2c29d876e946b23a3ee8a59baf5, type: 3}
+      propertyPath: m_AngularDrag
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5404032129150407021, guid: 2f45d2c29d876e946b23a3ee8a59baf5, type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 5404032129150407021, guid: 2f45d2c29d876e946b23a3ee8a59baf5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5404032129256692490, guid: 2f45d2c29d876e946b23a3ee8a59baf5, type: 3}
       propertyPath: m_Name
       value: Flash Light

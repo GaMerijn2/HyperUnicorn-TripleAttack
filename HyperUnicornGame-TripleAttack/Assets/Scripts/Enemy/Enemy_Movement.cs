@@ -40,12 +40,17 @@ public class Enemy_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HuntingPlayer();
-        SetEnemyPosition();
-        EnemyDirection();
+       
         
         
 
+    }
+
+    private void FixedUpdate()
+    {
+        HuntingPlayer();
+        SetEnemyPosition();
+        EnemyDirection();
     }
 
 
