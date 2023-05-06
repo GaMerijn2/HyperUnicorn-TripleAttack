@@ -363,6 +363,14 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.2780745
       objectReference: {fileID: 0}
+    - target: {fileID: 7600180097665924416, guid: 32d9987f70934ca4bbc00d3bc9ad2230, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 5648651913916460100, guid: b9eafe9b27252534d9cf5ef259c5aaed, type: 3}
+    - target: {fileID: 7600180097665924416, guid: 32d9987f70934ca4bbc00d3bc9ad2230, type: 3}
+      propertyPath: player_Controller
+      value: 
+      objectReference: {fileID: 2033684555}
     - target: {fileID: 7600180097665924417, guid: 32d9987f70934ca4bbc00d3bc9ad2230, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3634,6 +3642,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2033684555 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6429575899490383069, guid: 2f45d2c29d876e946b23a3ee8a59baf5, type: 3}
+  m_PrefabInstance: {fileID: 6429575900170698730}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dda1cf0632e0e994783a1adb5a7ea5d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6429575900170698730
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3794,6 +3813,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1934920988}
     m_Modifications:
+    - target: {fileID: 1649156637, guid: 774e437362bb85d449de3fe17c37ec59, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 5648651913916460100, guid: b9eafe9b27252534d9cf5ef259c5aaed, type: 3}
+    - target: {fileID: 1649156637, guid: 774e437362bb85d449de3fe17c37ec59, type: 3}
+      propertyPath: player_Controller
+      value: 
+      objectReference: {fileID: 2033684555}
     - target: {fileID: 5221128754023404553, guid: 774e437362bb85d449de3fe17c37ec59, type: 3}
       propertyPath: m_RootOrder
       value: 1

@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Main_Menu : MonoBehaviour
 {
 
-    Button play_game, how_To, quit;
+    public Button play_game, how_To, quit;
 
     // Start is called before the first frame update
     void Start()

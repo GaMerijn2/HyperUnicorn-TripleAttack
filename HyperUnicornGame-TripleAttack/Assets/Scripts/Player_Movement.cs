@@ -13,18 +13,28 @@ public class Player_Movement : MonoBehaviour
     float speed_limit = 0.6f;
     int bullet = 3;
 
+    public GameManager manager;
+
+    // Game inputs
     Input vertical_input;
     Input horizontal;
 
     bool movement_Toggle = false;
 
     private Vector2 mousePosition;
-
+    
+    // weapon script for shooting
     public Weapon weapon;
 
+    // game Ui
     public Image myBulletUI;
-
     public Sprite threeBullets, twoBullets, oneBullets, noBullets;
+
+    public int MyBullets
+    {
+        get { return bullet; }
+        set { bullet = value; }
+    }
     
     // Start is called before the first frame update
     void Start()
@@ -49,8 +59,10 @@ public class Player_Movement : MonoBehaviour
         {
             movement_Toggle = !movement_Toggle;
         }
-        Shooting_Bullets();
-
+        if(manager.NotPaused == true)
+        {
+            Shooting_Bullets();
+        }
     }
 
     void NormalMovement()
