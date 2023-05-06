@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player_Movement : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Player_Movement : MonoBehaviour
     Rigidbody2D myBody;
     [SerializeField] float movement_speed = 10f;
     float speed_limit = 0.6f;
+    int bullet = 3;
 
     Input vertical_input;
     Input horizontal;
@@ -19,6 +21,10 @@ public class Player_Movement : MonoBehaviour
     private Vector2 mousePosition;
 
     public Weapon weapon;
+
+    public Image myBulletUI;
+
+    public Sprite threeBullets, twoBullets, oneBullets, noBullets;
     
     // Start is called before the first frame update
     void Start()
@@ -43,10 +49,7 @@ public class Player_Movement : MonoBehaviour
         {
             movement_Toggle = !movement_Toggle;
         }
-        if (Input.GetMouseButtonDown(0))
-        {
-            weapon.Fire();
-        }
+        Shooting_Bullets();
 
     }
 
@@ -95,4 +98,29 @@ public class Player_Movement : MonoBehaviour
         float angle = (180 / Mathf.PI) * direction + addAngle;
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
+
+    void Shooting_Bullets()
+    {
+        if (Input.GetMouseButtonDown(0) && bullet >= 1)
+        {
+            weapon.Fire();
+            bullet--;
+        }
+        if(bullet == 3)
+        {
+            myBulletUI.sprite = threeBullets;
+        } else if(bullet == 2)
+        {
+            myBulletUI.sprite = twoBullets;
+        }
+        else if(bullet == 1)
+        {
+            myBulletUI.sprite = oneBullets;
+        }
+        else
+        {
+            myBulletUI.sprite = noBullets;
+        }
+    }
+
 }

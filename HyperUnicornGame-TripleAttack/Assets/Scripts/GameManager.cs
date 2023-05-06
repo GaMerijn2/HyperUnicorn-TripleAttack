@@ -10,7 +10,8 @@ public class GameManager : MonoBehaviour
 
 
     // UI Variable's
-    public GameObject Pause_Screen;
+    public GameObject pause_Screen;
+    public GameObject bullet_UI;
     public Button resume_Game;
     public Button to_Main_Menu;
 
@@ -29,12 +30,16 @@ public class GameManager : MonoBehaviour
 
     public void TogglePauseMenu()
     {
-
+        Time.timeScale = 0;
+        pause_Screen.SetActive(true);
+        bullet_UI.SetActive(false);
     }
 
     public void ResumeGame()
     {
-
+        Time.timeScale = 1;
+        pause_Screen.SetActive(false);
+        bullet_UI.SetActive(true);
     }
 
     public void QuitToMainMenu()

@@ -9,6 +9,8 @@ TagManager:
   - Zombie
   - Ghost
   - Light
+  - Explosive barrel
+  - trap
   layers:
   - Default
   - TransparentFX
@@ -16,7 +18,7 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
+  - EnemyToHit
   - 
   - 
   - 

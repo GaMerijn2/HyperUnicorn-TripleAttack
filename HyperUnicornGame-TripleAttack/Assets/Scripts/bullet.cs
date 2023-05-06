@@ -28,6 +28,10 @@ public class bullet : MonoBehaviour
                 collision.gameObject.GetComponent<Zombie>().GetHit();
                 Destroy(gameObject);
                 break;
+            case "Explosive barrel":
+                collision.gameObject.GetComponent<Barrel>().Boom();
+                Destroy(gameObject);
+                break;
             default:
                 break;
 
