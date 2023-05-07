@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
 
     int powerLevel;
     public Elevator elevator;
-
+    public GameObject level_2, level_3;
     // UI Variable's
     public GameObject pause_Screen;
     public GameObject bullet_UI;
@@ -100,6 +100,17 @@ public class GameManager : MonoBehaviour
                 break;
             case 2:
                 powerLevelUI.text = "powerlevel: 2";
+                level_2.SetActive(true);
+                break;
+            case 3:
+                powerLevelUI.text = "powerlevel: 3";
+                level_3.SetActive(true);
+                break;
+            case 4:
+                powerLevelUI.text = "powerlevel: 4";
+                break;
+            case 5:
+                powerLevelUI.text = "powerlevel: 5";
                 elevator.OpenElevator();
                 break;
             default:
@@ -115,6 +126,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        Debug.Log("game Ends");
+        gameOver.SetActive(true);
+        Time.timeScale = 0;
     }
 }

@@ -38,10 +38,21 @@ public class Spike_Trap : MonoBehaviour
         if (triggered)
         {
 
+        } else
+        {
+
         }
   
         Debug.Log("hello");
 
+    }
+
+    IEnumerator SpikesActive()
+    {
+        yield return new WaitForSeconds(0.5f);
+        triggered = true;
+        yield return new WaitForSeconds(2f);
+        triggered = false;
     }
 
 }

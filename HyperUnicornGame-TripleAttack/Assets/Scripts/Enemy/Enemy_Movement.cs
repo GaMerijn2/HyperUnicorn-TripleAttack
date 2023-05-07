@@ -16,6 +16,9 @@ public class Enemy_Movement : MonoBehaviour
 
     private float timer = 15f;
 
+    bool goingA;
+    bool stopHunting = true;
+
     public Transform Player { 
         get { return player; }
         set { player = value; }
@@ -50,6 +53,7 @@ public class Enemy_Movement : MonoBehaviour
     private void FixedUpdate()
     {
         HuntingPlayer();
+        Pathing();
         SetEnemyPosition();
         EnemyDirection();
     }
@@ -62,6 +66,7 @@ public class Enemy_Movement : MonoBehaviour
             if(timer >= 6f)
             {
                 timer = 7f;
+                stopHunting = true;
             }
             else
             {
@@ -74,6 +79,7 @@ public class Enemy_Movement : MonoBehaviour
         if (timer <= 5f)
         {
             target = player.position;
+            stopHunting = false;
         }
     }
 
@@ -124,5 +130,17 @@ public class Enemy_Movement : MonoBehaviour
         {
             child.transform.localEulerAngles = new Vector3(0, 0, 270);
         }
+    }
+
+    void Pathing()
+    {
+        if (stopHunting)
+        {
+
+
+
+        }
+        
+        
     }
 }
