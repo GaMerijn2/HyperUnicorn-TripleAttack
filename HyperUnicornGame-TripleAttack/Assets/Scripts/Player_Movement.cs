@@ -15,6 +15,10 @@ public class Player_Movement : MonoBehaviour
 
     public GameManager manager;
 
+    public Collider2D playerCollider;
+
+    float iFrameTime = 0.5f;
+
     // Game inputs
     Input vertical_input;
     Input horizontal;
@@ -65,6 +69,22 @@ public class Player_Movement : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        switch (collision.gameObject.tag)
+        {
+            case "Ghost":
+                LoseBullets();
+                break;
+            case "Zombie":
+                LoseBullets();
+                break;
+            default:
+                break;
+        }
+    }
+
+
     void NormalMovement()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
@@ -111,6 +131,19 @@ public class Player_Movement : MonoBehaviour
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 
+    public void LoseBullets()
+    {
+        if(bullet == 0)
+        {
+            manager.GameOver();
+        } else
+        {
+            bullet--;
+            StartCoroutine(IFrames());
+        }
+        
+    }
+
     void Shooting_Bullets()
     {
         if (Input.GetMouseButtonDown(0) && bullet >= 1)
@@ -134,5 +167,10 @@ public class Player_Movement : MonoBehaviour
             myBulletUI.sprite = noBullets;
         }
     }
-
+    private IEnumerator IFrames()
+    {
+        playerCollider.enabled = false;
+        yield return new WaitForSeconds(iFrameTime);
+        playerCollider.enabled = true;
+    }
 }

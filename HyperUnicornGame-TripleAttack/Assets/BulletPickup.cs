@@ -15,8 +15,13 @@ public class BulletPickup : MonoBehaviour
             if(bulletAmount <= 2)
             {
                 collision.gameObject.GetComponent<Player_Movement>().MyBullets++;
+                Destroy(gameObject);
             }
-            Destroy(gameObject);
+            else
+            {
+                Destroy(gameObject);
+            }
+            
         }
     }
 

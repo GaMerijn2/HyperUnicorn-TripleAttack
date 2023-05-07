@@ -18,8 +18,12 @@ public class GameManager : MonoBehaviour
     public GameObject bullet_UI;
     public Button resume_Game;
     public Button to_Main_Menu;
+    public Button to_main, goToMainMenu;
 
     public TMP_Text powerLevelUI;
+
+    public GameObject gameOver;
+    public GameObject gameEnd;
 
     public bool NotPaused
     {
@@ -31,6 +35,8 @@ public class GameManager : MonoBehaviour
     {
         resume_Game.onClick.AddListener(ResumeGame);
         to_Main_Menu.onClick.AddListener(QuitToMainMenu);
+        to_main.onClick.AddListener(QuitToMainMenu);
+        goToMainMenu.onClick.AddListener(QuitToMainMenu);
     }
 
     // Update is called once per frame
@@ -102,6 +108,12 @@ public class GameManager : MonoBehaviour
     }
 
     public void GameEnd()
+    {
+        gameEnd.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void GameOver()
     {
         Debug.Log("game Ends");
     }

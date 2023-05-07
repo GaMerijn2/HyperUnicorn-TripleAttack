@@ -10,6 +10,10 @@ public class PowerBox : MonoBehaviour
     public GameObject interact_UI;
 
     public GameManager manager;
+
+    public bool PowerOn{
+        get { return boxIsOn; }
+    }
     // Start is called before the first frame update
     void Start()
     {

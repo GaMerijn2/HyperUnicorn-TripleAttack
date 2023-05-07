@@ -19,10 +19,15 @@ public class Enemy : MonoBehaviour
             if(player_Controller.MyBullets <= 2)
             {
                GameObject myPickup = Instantiate(bulletPrefab, this.transform.position, this.transform.rotation);
+                Destroy(gameObject);
+            } else
+            {
+                Destroy(gameObject);
             }
-            Destroy(gameObject);
+            
         }
     }
+
     void HuntingPlayer()
     {
 

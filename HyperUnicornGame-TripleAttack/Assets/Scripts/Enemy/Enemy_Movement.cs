@@ -12,6 +12,7 @@ public class Enemy_Movement : MonoBehaviour
     private Vector3 target;
     private bool checkPlayer = false;
     private Transform player;
+    public GameObject pathA, pathB;
 
     private float timer = 15f;
 

@@ -32,6 +32,10 @@ public class bullet : MonoBehaviour
                 collision.gameObject.GetComponent<Barrel>().Boom();
                 Destroy(gameObject);
                 break;
+            case "trap":
+                collision.gameObject.GetComponent<Spike_Trap>().ActivateTrap();
+                Destroy(gameObject);
+                break;
             default:
                 break;
 
