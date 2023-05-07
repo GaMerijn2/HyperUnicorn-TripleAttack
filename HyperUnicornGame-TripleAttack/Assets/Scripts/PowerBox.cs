@@ -7,7 +7,9 @@ public class PowerBox : MonoBehaviour
     private bool playerInRange;
     private bool boxIsOn;
     public GameObject lights;
+    public GameObject interact_UI;
 
+    public GameManager manager;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,8 @@ public class PowerBox : MonoBehaviour
                 boxIsOn = true;
                 lights.SetActive(true);
                 Debug.Log("a switch is turned on");
+                manager.PowerLevelUp();
+                interact_UI.SetActive(false);
             }
         }
     }
@@ -33,6 +37,10 @@ public class PowerBox : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            if(boxIsOn == false)
+            {
+                interact_UI.SetActive(true);
+            }
             playerInRange = true;
         }
     }
@@ -41,6 +49,10 @@ public class PowerBox : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            if (boxIsOn == false)
+            {
+                interact_UI.SetActive(false);
+            }
             playerInRange = false;
         }
     }

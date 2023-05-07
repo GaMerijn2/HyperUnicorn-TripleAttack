@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,6 +10,8 @@ public class GameManager : MonoBehaviour
     // Other Variable's
     bool notPaused = true;
 
+    int powerLevel;
+    public Elevator elevator;
 
     // UI Variable's
     public GameObject pause_Screen;
@@ -16,11 +19,12 @@ public class GameManager : MonoBehaviour
     public Button resume_Game;
     public Button to_Main_Menu;
 
+    public TMP_Text powerLevelUI;
+
     public bool NotPaused
     {
         get { return notPaused; }
     }
-
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +40,7 @@ public class GameManager : MonoBehaviour
         {
             TogglePauseMenu();
         }
+        PowerLevelUI();
     }
 
     public void TogglePauseMenu()
@@ -72,5 +77,32 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void PowerLevelUp()
+    {
+        powerLevel++;
+    }
 
+    void PowerLevelUI()
+    {
+        switch (powerLevel)
+        {
+            case 0:
+                powerLevelUI.text = "powerlevel: 0";
+                break;
+            case 1:
+                powerLevelUI.text = "powerlevel: 1";
+                break;
+            case 2:
+                powerLevelUI.text = "powerlevel: 2";
+                elevator.OpenElevator();
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void GameEnd()
+    {
+        Debug.Log("game Ends");
+    }
 }
