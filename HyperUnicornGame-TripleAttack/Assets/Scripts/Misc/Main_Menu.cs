@@ -13,7 +13,6 @@ public class Main_Menu : MonoBehaviour
     void Start()
     {
         play_game.onClick.AddListener(PlayGame);
-        how_To.onClick.AddListener(HowTo);
         quit.onClick.AddListener(QuitGame);
     }
 
@@ -28,10 +27,6 @@ public class Main_Menu : MonoBehaviour
         SceneManager.LoadScene(sceneBuildIndex:  1);
     }
 
-    void HowTo()
-    {
-        SceneManager.LoadScene(sceneBuildIndex: 2);
-    }
 
     void QuitGame()
     {
